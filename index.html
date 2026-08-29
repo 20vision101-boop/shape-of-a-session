@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shape of a Session</title>
+  <meta name="description" content="A scroll-driven guide to training: intensity zones, an exercise library with step-by-step instructions, a weekly template, and a place to log your own numbers." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="exercise.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <h1>The Shape of a Session</h1>
+    <p class="subtitle">Every set is an instruction to the body. This page is what each one says — and exactly how to perform it.</p>
+    <div class="scroll-cue">scroll ↓</div>
+  </section>
+
+  <!-- SECTION 1: intro text -->
+  <section class="reveal" id="part-1">
+    <div class="section-inner">
+      <p class="eyebrow">01 · THE PREMISE</p>
+      <h2>Part One — Muscle is the biggest glucose sink you own</h2>
+      <p>
+        Skeletal muscle takes up the large majority of the glucose your body
+        clears after a meal, and it has a second door for doing it. Insulin
+        opens one. <strong>Contraction opens the other</strong> — the same
+        GLUT4 transporters move to the cell surface when a muscle works,
+        whether or not insulin shows up.
+      </p>
+      <p>
+        That's why a ten-minute walk bends a post-meal curve, and why
+        resistance training pays out over months: a session empties muscle
+        glycogen and leaves it hungry, while more lean mass means a bigger
+        tank to fill next time. One is the acute effect, the other is the
+        adaptation. You want both.
+      </p>
+      <p>
+        What follows is the practical half — the <strong>zones</strong>
+        worth training in, the four <strong>schools</strong> most of this
+        advice descends from, a <strong>library of movements</strong> with
+        step-by-step instructions, four <strong>weekly templates</strong>
+        that hold them, and a place to keep <strong>your own numbers</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: intensity zones chart + mechanism diagram -->
+  <section class="reveal" id="part-2">
+    <div class="section-inner">
+      <p class="eyebrow">02 · THE ZONES</p>
+      <h2>Part Two — Not all effort is the same effort</h2>
+      <p>
+        Intensity is usually described as a percentage of maximum heart rate.
+        The bands below are the common five-zone model, with the fuel mix and
+        the reason you'd train in each. Rough estimate for your max:
+        <code>208 − 0.7 × age</code> — a lab test is better, but this is
+        close enough to aim with.
+      </p>
+      <div class="chart-wrap">
+        <svg id="zones-chart" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        Most weekly volume belongs low (Zone 2 conversational work), a small
+        slice belongs high (Zone 4-5 intervals), and the middle is where
+        people accidentally live — hard enough to accumulate fatigue, easy
+        enough to skip the adaptation either end would have given them.
+      </p>
+
+      <div class="diagram-block">
+        <p class="eyebrow">THE MECHANISM</p>
+        <h3>Two doors into the muscle cell</h3>
+        <svg id="uptake-diagram" viewBox="0 0 520 400" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        The insulin-independent path is why movement still works on days when
+        insulin signalling is blunted — and why the walk matters most right
+        after the meal, not four hours later.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: the schools -->
+  <section class="reveal" id="part-3">
+    <div class="section-inner">
+      <p class="eyebrow">03 · THE SCHOOLS</p>
+      <h2>Part Three — Four traditions, four answers</h2>
+      <p>
+        Nobody trains from first principles; everybody inherits a school. The
+        four below disagree productively — about how much variety a program
+        needs, about whether intensity or practice drives adaptation, about
+        what tissue you're even training. Each card ends with the movements
+        that school actually programs.
+      </p>
+      <div id="schools" class="schools-grid"></div>
+      <p class="caption">
+        They overlap more than their internet arguments suggest. A hinge is a
+        hinge whether the load is a barbell or a bell; the disagreement is
+        about dose, variety, and what gets measured.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: the exercise library -->
+  <section class="reveal" id="part-4">
+    <div class="section-inner">
+      <p class="eyebrow">04 · THE LIBRARY</p>
+      <h2>Part Four — The movements, and how to do them</h2>
+      <p>
+        Thirty-two movements drawn from all four schools. Each card carries
+        what the movement is for, a numbered set of instructions, the cues
+        that fix the usual mistakes, and a starting prescription. Filter by
+        pattern or by school, or narrow to what you can do with no equipment
+        at all.
+      </p>
+
+      <div class="library-controls">
+        <div id="school-filters" class="filter-row" role="group" aria-label="Filter by school"></div>
+        <div id="category-filters" class="filter-row" role="group" aria-label="Filter by movement pattern"></div>
+        <div class="filter-row">
+          <button id="bodyweight-toggle" class="toggle-btn" type="button">Bodyweight only</button>
+          <button id="expand-all" class="toggle-btn" type="button">Expand all</button>
+        </div>
+        <p id="library-count" class="caption"></p>
+      </div>
+
+      <div id="exercise-library" class="exercise-library"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: the weekly templates -->
+  <section class="reveal" id="part-5">
+    <div class="section-inner">
+      <p class="eyebrow">05 · THE WEEK</p>
+      <h2>Part Five — Four weeks, one per school</h2>
+      <p>
+        The same seven days, arranged four ways. Pick a template to see how
+        each tradition spends a week, then click a day for the session it's
+        asking for.
+      </p>
+
+      <div id="program-picker" class="filter-row" role="group" aria-label="Choose a weekly template"></div>
+      <p id="program-blurb" class="caption program-blurb"></p>
+
+      <div id="week-plan" class="week-plan"></div>
+      <div id="day-detail" class="day-detail"></div>
+
+      <div class="rules-block">
+        <h3>How any of them progresses</h3>
+        <ol class="rules-list">
+          <li>
+            <strong>Add reps before weight.</strong> Work the top of the rep
+            range on every set, then add the smallest load available and
+            drop back to the bottom of the range.
+          </li>
+          <li>
+            <strong>Leave 1-3 reps in reserve.</strong> Stop a set when you
+            could still do a couple more clean ones. Grinding to failure on
+            every set buys fatigue, not adaptation.
+          </li>
+          <li>
+            <strong>Hold the easy days easy.</strong> Zone 2 that creeps into
+            Zone 3 is the most common way to make a week harder without
+            making it better.
+          </li>
+          <li>
+            <strong>Deload every 4-6 weeks.</strong> Same movements, ~60% of
+            the usual sets, for one week. It's part of the plan, not a
+            failure of it.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: make it yours -->
+  <section class="reveal" id="part-6">
+    <div class="section-inner">
+      <p class="eyebrow">06 · THE LOG</p>
+      <h2>Part Six — Your numbers, on your device</h2>
+      <p>
+        Estimate a one-rep max from a set you've actually done — the number
+        a linear progression is priced in — get the percentage-based working
+        weights that fall out of it, and tick off this week's sessions. Same rule as the rest of this site: everything
+        below is stored in <code>localStorage</code> and never leaves your
+        browser.
+      </p>
+
+      <div class="you-panel">
+        <h3>Estimate a working weight</h3>
+        <p class="caption">
+          Uses the Epley formula — <code>1RM ≈ w × (1 + reps / 30)</code>.
+          It's an estimate, and it drifts badly above about 10 reps. Treat
+          the output as a starting point, not a target to test.
+        </p>
+
+        <form id="oneRM-form" class="labs-form">
+          <label>
+            <span>Exercise</span>
+            <input type="text" id="input-lift" placeholder="e.g. Goblet squat" />
+          </label>
+          <label>
+            <span>Weight lifted</span>
+            <input type="number" step="0.5" min="0" id="input-weight" placeholder="e.g. 60" />
+          </label>
+          <label>
+            <span>Reps completed</span>
+            <input type="number" step="1" min="1" max="15" id="input-reps" placeholder="e.g. 8" />
+          </label>
+        </form>
+        <div id="oneRM-result" class="homa-result"></div>
+        <div id="percent-table" class="percent-table"></div>
+
+        <h3 class="panel-heading">This week's sessions</h3>
+        <p class="caption">
+          The slots follow whichever template you picked in Part Five —
+          switch template and the checkboxes follow. Ticks are saved per
+          template.
+        </p>
+        <div id="session-checks" class="session-checks"></div>
+        <div id="session-summary" class="session-summary"></div>
+
+        <button id="clear-training-data" class="toggle-btn" type="button">Clear my data</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with plain HTML/CSS/JS · deployed on Vercel</p>
+    <p class="disclaimer">
+      General training information, not medical advice or personalized
+      programming. Loads, ranges, and zone models are illustrative starting
+      points — check with a doctor before starting a new program, especially
+      with existing cardiac, metabolic, or joint conditions.
+    </p>
+  </footer>
+
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Section navigator">
+    <div class="chapter-count">
+      <span id="chapter-current">01</span><span class="chapter-total"> / 06</span>
+    </div>
+    <div class="chapter-dots">
+      <button class="chapter-dot" data-target="part-1" aria-label="Jump to Part One"></button>
+      <button class="chapter-dot" data-target="part-2" aria-label="Jump to Part Two"></button>
+      <button class="chapter-dot" data-target="part-3" aria-label="Jump to Part Three"></button>
+      <button class="chapter-dot" data-target="part-4" aria-label="Jump to Part Four"></button>
+      <button class="chapter-dot" data-target="part-5" aria-label="Jump to Part Five"></button>
+      <button class="chapter-dot" data-target="part-6" aria-label="Jump to Part Six"></button>
+    </div>
+  </nav>
+
+  <script type="module" src="js/exercise/main.js"></script>
+</body>
+</html>

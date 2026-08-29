@@ -1,0 +1,385 @@
+/* exercise.html — components that don't exist on the nutrition page.
+   Everything here layers on top of style.css and reuses its variables. */
+
+/* --- shared bits ---------------------------------------------------- */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(124, 158, 255, 0.14);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.tag.subtle {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+}
+
+.tag.school-tag {
+  background: color-mix(in srgb, var(--school) 16%, transparent);
+  color: var(--school);
+}
+
+.detail-label {
+  margin: 1.25rem 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.detail-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: rgba(124, 158, 255, 0.4);
+}
+
+/* --- Part Two: zone chart labels ------------------------------------ */
+#zones-chart { width: 100%; height: auto; display: block; }
+
+.zone-name { fill: var(--text); font-size: 13px; font-weight: 600; }
+.zone-sub { fill: var(--muted); font-size: 11px; }
+.zone-feel { fill: var(--muted); font-size: 11px; }
+.uptake-heading { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+
+/* --- Part Three: the schools ---------------------------------------- */
+.schools-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.school-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 3px solid var(--school);
+  border-radius: 12px;
+}
+
+.school-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--school);
+}
+
+.school-lineage {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.school-thesis {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.school-verdict {
+  margin: 1.25rem 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.school-verdict dt {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-top: 0.15rem;
+}
+
+.school-verdict dd { margin: 0; color: var(--text); }
+
+.school-jump {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.school-jump:hover { border-color: var(--school); color: var(--school); }
+
+/* --- Part Four: the library ----------------------------------------- */
+.library-controls { margin-top: 2rem; }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.filter-chip { margin-top: 0; }
+
+.school-chip.active {
+  background: color-mix(in srgb, var(--school) 15%, transparent);
+  border-color: var(--school);
+  color: var(--school);
+}
+
+#library-count { margin-top: 0.25rem; }
+
+.exercise-library {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exercise-card {
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1rem 1.25rem 1.1rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.exercise-card:hover { border-color: rgba(124, 158, 255, 0.35); }
+
+.exercise-card.open {
+  border-color: var(--accent);
+  background: rgba(124, 158, 255, 0.04);
+}
+
+.exercise-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.exercise-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.exercise-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.exercise-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.exercise-chevron {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.exercise-card.open .exercise-chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.exercise-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.exercise-detail {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.exercise-why {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.step-list,
+.cue-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.step-list li,
+.cue-list li { margin-bottom: 0.4rem; }
+
+.cue-list { color: var(--muted); }
+
+/* --- Part Five: the week -------------------------------------------- */
+.program-blurb { margin-top: 0.25rem; }
+
+.week-plan {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem 0.5rem;
+  min-height: 110px;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.day-card:hover { transform: translateY(-2px); }
+
+.day-card[data-kind="lift"] { border-left: 3px solid var(--accent); }
+.day-card[data-kind="hard"] { border-left: 3px solid var(--high); }
+.day-card[data-kind="easy"] { border-left: 3px solid var(--ok); }
+.day-card[data-kind="off"] { border-left: 3px solid rgba(255, 255, 255, 0.2); }
+
+.day-card.active {
+  border-color: var(--accent);
+  background: rgba(124, 158, 255, 0.08);
+}
+
+.day-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.day-title { font-size: 0.85rem; line-height: 1.35; }
+
+.day-duration {
+  margin-top: auto;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.day-detail {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.day-detail-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.day-detail-head h3 { margin: 0; font-size: 1.1rem; }
+
+.detail-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.detail-items {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.87rem;
+  color: var(--text);
+}
+
+.detail-items li { margin-bottom: 0.3rem; }
+
+.rules-block {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+.rules-block h3 { margin: 0 0 0.75rem; font-size: 1.05rem; }
+
+.rules-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.rules-list li { margin-bottom: 0.6rem; }
+.rules-list strong { color: var(--text); }
+
+/* --- Part Six: the log ---------------------------------------------- */
+/* .you-panel h3 sets a margin shorthand, so this needs the same specificity. */
+.you-panel .panel-heading { margin-top: 2.25rem; }
+
+.percent-table { margin-top: 1.25rem; overflow-x: auto; }
+
+.pct-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.pct-table th {
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pct-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pct-weight { color: var(--accent); font-weight: 600; }
+.pct-use { color: var(--muted); }
+
+.session-checks {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.session-summary { margin-top: 1rem; }
+
+#clear-training-data { margin-top: 1.5rem; }
+
+/* --- responsive ------------------------------------------------------ */
+@media (max-width: 720px) {
+  .week-plan { grid-template-columns: repeat(2, 1fr); }
+  .day-card { min-height: 96px; }
+  .exercise-head { align-items: flex-start; }
+}
