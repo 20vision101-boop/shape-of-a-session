@@ -93,7 +93,7 @@ function drawRhythmChart() {
     <text x="${xFor(7)}" y="${M.top + 14}" text-anchor="middle" class="zone-sub">waking window</text>
     ${grid}
     ${xLabels}
-    <text x="${M.left - 46}" y="${M.top - 8}" class="axis-label">nmol/L</text>
+    <text x="${M.left - 46}" y="${M.top + 4}" class="axis-label">nmol/L</text>
     ${paths}
     ${legend}
   `;
