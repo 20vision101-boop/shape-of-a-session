@@ -1,57 +1,64 @@
-# The Shape of a Session
+# Four Curves
 
-A scroll-driven visual essay about training: the intensity zones worth
-training in, the four schools most training advice descends from, a
-32-movement exercise library with step-by-step instructions, four weekly
-templates, and a local-only training log.
+Four scroll-driven visual essays about things you can measure and change:
+glucose, training, cortisol, and testosterone. Each one shows the curve
+rather than the average, explains the mechanism underneath it, lists what
+actually moves it, and gives you somewhere to put your own numbers.
 
-Plain HTML/CSS/JS. No build step, no framework, no dependencies.
+Plain HTML/CSS/JS. No build step, no framework, no dependencies, no backend.
 
-## The page
+## The pages
 
-| Part | What's in it |
-| --- | --- |
-| 01 · The premise | Why skeletal muscle is the largest glucose sink you own |
-| 02 · The zones | The five %HRmax bands, and the two routes to GLUT4 translocation |
-| 03 · The schools | Starting Strength, hardstyle kettlebell, box conditioning, fascial elasticity |
-| 04 · The library | 32 movements — description, numbered instructions, cues, prescription |
-| 05 · The week | Four weekly templates, one per school, with a clickable day detail |
-| 06 · The log | An Epley 1RM estimate, %-based working weights, and session ticks |
+| Page | Title | What's in it |
+| --- | --- | --- |
+| `index.html` | Four Curves | Landing page — the four essays and how they connect |
+| `glucose.html` | The Shape of a Spike | Post-meal curves, glycemic load, food pairing, HOMA-IR calculator |
+| `training.html` | The Shape of a Session | Intensity zones, four schools, 32 movements with instructions, four weekly templates, 1RM calculator |
+| `cortisol.html` | The Shape of a Day | Diurnal rhythm, the HPA axis, 14 practices, a daily template, caffeine maths and a seven-day check-in |
+| `testosterone.html` | The Shape of a Signal | Total vs free vs SHBG, evidence-ranked levers, the clinical workup, the TRT ledger, a Vermeulen free-T calculator |
 
-## The code
+Every panel stores to `localStorage` on the reader's own device. Nothing is
+sent anywhere.
 
-- `index.html` — the page: hero + 6 sections + footer
-- `style.css` — dark theme, reveal-on-scroll, shared components
-- `exercise.css` — school cards, exercise cards, the week grid, the percentage table
-- `js/main.js` is `js/exercise/main.js`; each module exports one `init`:
+## Structure
 
-  | Module | What it does |
-  | --- | --- |
-  | `exercise/exercise-data.js` | The content layer: `CATEGORIES`, `SCHOOLS`, and the 32-entry `EXERCISES` array |
-  | `exercise/zones-chart.js` | Hand-drawn SVG chart of the five training zones |
-  | `exercise/uptake-diagram.js` | SVG diagram of the insulin- and contraction-mediated paths |
-  | `exercise/schools.js` | The four tradition cards; clicking one filters the library |
-  | `exercise/library.js` | The filterable, expandable exercise library |
-  | `exercise/week-plan.js` | Four weekly templates with a clickable day detail |
-  | `exercise/training-log.js` | 1RM estimate, working weights, session ticks — all `localStorage` |
-  | `reveal.js` | `IntersectionObserver` that reveals each section on scroll |
-  | `chapter-nav.js` | Chapter navigator, driven by the nav dots in the markup |
-  | `hero/` | The procedurally animated canvas hero |
+```
+index.html  glucose.html  training.html  cortisol.html  testosterone.html
+style.css        base theme, hero, reveal-on-scroll, chapter nav, footer
+components.css   everything else: site nav, cards, libraries, tables, grids
+js/
+  shared/        reveal.js · chapter-nav.js · library.js · hero/
+  glucose/       main.js + the nutrition modules
+  training/      main.js + exercise-data.js and the training modules
+  cortisol/      main.js + practices-data.js and the cortisol modules
+  testosterone/  main.js + levers-data.js, free-t.js and the panel modules
+```
 
-Everything in Part Six stays in `localStorage` on the device. Nothing is
-sent anywhere; there is no backend.
+Each page has one `main.js` that calls each module's `init`. Three things
+are genuinely shared:
+
+- **`js/shared/reveal.js`** — the `IntersectionObserver` that fades sections in
+- **`js/shared/chapter-nav.js`** — the chapter navigator; it reads its sections
+  from the nav dots in the markup, so a page can have any number of parts
+- **`js/shared/library.js`** — the filterable, expandable card library used by
+  the movement library, the practice library and the lever library. Each page
+  supplies an adapter that maps its own data onto the component's item shape
 
 ## Editing the content
 
-`js/exercise/exercise-data.js` is the whole content layer. Add an entry to
-`EXERCISES` — name, `schools`, `category`, `equipment`, `bodyweight`,
-`level`, `focus`, `prescription`, `why`, `steps`, `cues` — and the filters,
-counts and school cards pick it up with no other change. Adding a fifth
-entry to `SCHOOLS` works the same way.
+Each essay keeps its content in one data module, and the interactive parts
+read from it:
+
+- `js/training/exercise-data.js` — `CATEGORIES`, `SCHOOLS`, `EXERCISES`
+- `js/cortisol/practices-data.js` — `CATEGORIES`, `WINDOWS`, `INPUTS`, `PRACTICES`
+- `js/testosterone/levers-data.js` — `CATEGORIES`, `TIERS`, `MARKERS`, `LEVERS`
+
+Add an entry and the filters, counts and cards pick it up with no other
+change.
 
 ## Run it locally
 
-You need to serve it over HTTP — the page loads ES modules, and browsers
+You need to serve it over HTTP — the pages load ES modules, and browsers
 block those on `file://`.
 
 ```bash
@@ -60,13 +67,13 @@ npx serve .
 
 ## Deploy
 
-It's a static site: no build command, no output directory, no environment
+Static site: no build command, no output directory, no environment
 variables. On Vercel, import the repo and pick **Other** as the framework
-preset. `vercel.json` is already here.
+preset; `vercel.json` is already here.
 
 ## Disclaimer
 
-General training information, not medical advice or personalized
-programming. Loads, rep ranges and zone models are illustrative starting
-points. Talk to a doctor before starting a new program, especially with
-existing cardiac, metabolic or joint conditions.
+General information, not medical advice or personalized guidance. Curves,
+reference bands, doses and prescriptions throughout are illustrative
+starting points, and physiology varies. Talk to a doctor about your own
+results before acting on any of it.

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shape of a Day</title>
+  <meta name="description" content="A scroll-driven look at cortisol: the diurnal rhythm, what flattens it, a library of practices with instructions, a daily template, and a local-only log." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Essays">
+    <a class="site-nav-brand" href="index.html">Four Curves</a>
+    <div class="site-nav-links">
+      <a href="glucose.html">Glucose</a>
+      <a href="training.html">Training</a>
+      <a href="cortisol.html" aria-current="page">Cortisol</a>
+      <a href="testosterone.html">Testosterone</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <h1>The Shape of a Day</h1>
+    <p class="subtitle">Cortisol isn't the villain. The rhythm is the thing — a steep climb at dawn, a long slide to almost nothing by midnight.</p>
+    <div class="scroll-cue">scroll ↓</div>
+  </section>
+
+  <!-- 01 -->
+  <section class="reveal" id="part-1">
+    <div class="section-inner">
+      <p class="eyebrow">01 · THE PREMISE</p>
+      <h2>Part One — You don't want less cortisol</h2>
+      <p>
+        Cortisol gets talked about as a toxin to be minimised. It isn't. It's
+        the hormone that gets you out of bed: it mobilises glucose, sharpens
+        attention, and holds blood pressure up. People who genuinely can't
+        make enough of it are seriously ill.
+      </p>
+      <p>
+        What matters is the <strong>shape of the curve across the day</strong>.
+        A healthy pattern spikes hard in the 30-45 minutes after waking, then
+        declines all day to a floor around midnight. The pattern that tracks
+        with chronic stress isn't a higher line — it's a <strong>flatter</strong>
+        one: a weak morning rise and an evening that never comes down.
+      </p>
+      <p>
+        So the goal isn't suppression, it's amplitude. Everything on this page
+        is aimed at making the morning steeper and the evening lower.
+      </p>
+      <p class="caption">
+        One caveat before the rest: persistent fatigue, unexplained weight
+        change, dizziness on standing, or the pattern not responding to any of
+        this are reasons to see a doctor rather than to try harder. Cushing's
+        and adrenal insufficiency are real diagnoses with real tests; "adrenal
+        fatigue" is not one of them.
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="reveal" id="part-2">
+    <div class="section-inner">
+      <p class="eyebrow">02 · THE CURVE</p>
+      <h2>Part Two — Three days, three shapes</h2>
+      <p>
+        Salivary cortisol across 24 hours, drawn three ways: the rhythm you
+        want, the flattened slope that tracks with chronic stress, and the
+        evening elevation that short sleep and late stimulants produce.
+        <strong>Illustrative curves</strong>, not measurements.
+      </p>
+      <div class="chart-wrap">
+        <svg id="rhythm-chart" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        Note what the three have in common: the total area under them isn't
+        wildly different. It's the amplitude — the distance between the
+        morning peak and the midnight floor — that separates them.
+      </p>
+
+      <div class="diagram-block">
+        <p class="eyebrow">THE MECHANISM</p>
+        <h3>The axis that makes it</h3>
+        <svg id="hpa-diagram" viewBox="0 0 520 420" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        The loop is self-limiting by design: cortisol shuts off the signal
+        that produced it. Most of what's called "chronic stress" is that
+        brake losing sensitivity under a load that never lets up.
+      </p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="reveal" id="part-3">
+    <div class="section-inner">
+      <p class="eyebrow">03 · THE INPUTS</p>
+      <h2>Part Three — What moves it, and which way</h2>
+      <p>
+        Some of these you want. A sharp morning rise and a training-day spike
+        are the system working. The ones worth reducing are the ones that
+        raise the curve when it should be falling.
+      </p>
+      <div id="inputs-grid" class="inputs-grid"></div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="reveal" id="part-4">
+    <div class="section-inner">
+      <p class="eyebrow">04 · THE PRACTICES</p>
+      <h2>Part Four — Fourteen things you can actually do</h2>
+      <p>
+        Each one carries a dose, an honest note on how good the evidence is,
+        step-by-step instructions, and the caveats. Filter by what it works
+        on, or by when in the day it belongs.
+      </p>
+
+      <div class="library-controls">
+        <div id="practice-windows" class="filter-row" role="group" aria-label="Filter by time of day"></div>
+        <div id="practice-categories" class="filter-row" role="group" aria-label="Filter by category"></div>
+        <div class="filter-row">
+          <button id="practice-expand" class="toggle-btn" type="button">Expand all</button>
+        </div>
+        <p id="practice-count" class="caption"></p>
+      </div>
+
+      <div id="practice-library" class="exercise-library"></div>
+
+      <p class="caption">
+        Ranked by leverage rather than novelty, the order is roughly: sleep
+        regularity, morning light, caffeine timing, alcohol, then everything
+        else. The breathing protocols are the fastest to feel and the least
+        likely to change a weekly average on their own.
+      </p>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="reveal" id="part-5">
+    <div class="section-inner">
+      <p class="eyebrow">05 · THE DAY</p>
+      <h2>Part Five — Where each one belongs</h2>
+      <p>
+        The same practices, arranged against the curve. Click a block to see
+        what belongs in it and why.
+      </p>
+
+      <div id="day-timeline" class="week-plan day-timeline"></div>
+      <div id="day-detail" class="day-detail"></div>
+
+      <div class="rules-block">
+        <h3>The four that matter most</h3>
+        <ol class="rules-list">
+          <li><strong>Fix the wake time first.</strong> Everything else on this page is downstream of a stable clock, and the wake time is the anchor — not the bedtime.</li>
+          <li><strong>Light early, dim late.</strong> The two ends of the same lever. Ten minutes outside in the morning is worth more than an hour of anything else here.</li>
+          <li><strong>Move the caffeine, don't cut it.</strong> Timing beats abstinence for almost everyone. Delay the first, cut off the last.</li>
+          <li><strong>Watch the total load.</strong> Training stress and life stress come out of the same account. A hard block at work is a reason to deload, not to prove something.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="reveal" id="part-6">
+    <div class="section-inner">
+      <p class="eyebrow">06 · THE LOG</p>
+      <h2>Part Six — Your schedule, on your device</h2>
+      <p>
+        Two times generate the whole template. Add your usual coffee and
+        you'll get an estimate of how much is still on board at bedtime.
+        Everything below stays in <code>localStorage</code> and never leaves
+        your browser.
+      </p>
+
+      <div class="you-panel">
+        <h3>Build your day</h3>
+        <form id="day-form" class="labs-form">
+          <label>
+            <span>Wake time</span>
+            <input type="time" id="input-wake" />
+          </label>
+          <label>
+            <span>Bedtime</span>
+            <input type="time" id="input-bed" />
+          </label>
+          <label>
+            <span>Last caffeine</span>
+            <input type="time" id="input-caffeine" />
+          </label>
+          <label>
+            <span>Dose (mg)</span>
+            <input type="number" step="10" min="0" id="input-dose" placeholder="e.g. 95" />
+          </label>
+        </form>
+        <div id="caffeine-result" class="homa-result"></div>
+        <div id="schedule-result" class="percent-table"></div>
+        <p class="caption">
+          A drip coffee is roughly 95mg, espresso 65mg, black tea 45mg, a
+          large energy drink 150mg. The half-life used here is 5.5 hours —
+          a population average that varies several-fold between people.
+        </p>
+
+        <h3 class="panel-heading">Seven-day check-in</h3>
+        <p class="caption">
+          Two numbers a day is enough to see a pattern. Bars are hours slept;
+          dots are how stressed the day felt.
+        </p>
+
+        <div class="checkin-inputs">
+          <label class="labs-inline">
+            <span>Hours slept last night</span>
+            <input type="number" step="0.5" min="0" max="14" id="input-sleep" placeholder="e.g. 7.5" />
+          </label>
+          <div class="labs-inline">
+            <span>Stress today</span>
+            <div id="stress-picker" class="stress-picker">
+              <button type="button" data-stress="1">1</button>
+              <button type="button" data-stress="2">2</button>
+              <button type="button" data-stress="3">3</button>
+              <button type="button" data-stress="4">4</button>
+              <button type="button" data-stress="5">5</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="checkin-grid" class="checkin-grid"></div>
+        <div id="checkin-summary" class="session-summary"></div>
+
+        <button id="clear-day-data" class="toggle-btn" type="button">Clear my data</button>
+      </div>
+
+      <p class="caption" style="margin-top: 2rem;">
+        Cortisol doesn't work alone: it raises blood glucose directly, which
+        is <a href="glucose.html">the glucose page</a>'s subject, and chronic
+        elevation suppresses the axis on
+        <a href="testosterone.html">the testosterone page</a>. Sleep is the
+        variable all four essays share.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with plain HTML/CSS/JS · deployed on Vercel</p>
+    <p class="disclaimer">
+      General information, not medical advice. Cortisol testing and its
+      interpretation belong with a doctor; persistent fatigue, unexplained
+      weight change or blood-pressure symptoms deserve a real workup rather
+      than a protocol.
+    </p>
+  </footer>
+
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Section navigator">
+    <div class="chapter-count">
+      <span id="chapter-current">01</span><span class="chapter-total"> / 06</span>
+    </div>
+    <div class="chapter-dots">
+      <button class="chapter-dot" data-target="part-1" aria-label="Jump to Part One"></button>
+      <button class="chapter-dot" data-target="part-2" aria-label="Jump to Part Two"></button>
+      <button class="chapter-dot" data-target="part-3" aria-label="Jump to Part Three"></button>
+      <button class="chapter-dot" data-target="part-4" aria-label="Jump to Part Four"></button>
+      <button class="chapter-dot" data-target="part-5" aria-label="Jump to Part Five"></button>
+      <button class="chapter-dot" data-target="part-6" aria-label="Jump to Part Six"></button>
+    </div>
+  </nav>
+
+  <script type="module" src="js/cortisol/main.js"></script>
+</body>
+</html>

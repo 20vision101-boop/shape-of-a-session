@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shape of a Signal</title>
+  <meta name="description" content="A scroll-driven look at testosterone: total vs free vs SHBG, the levers that actually move it, what a real clinical workup looks like, and a local-only free-T calculator." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Essays">
+    <a class="site-nav-brand" href="index.html">Four Curves</a>
+    <div class="site-nav-links">
+      <a href="glucose.html">Glucose</a>
+      <a href="training.html">Training</a>
+      <a href="cortisol.html">Cortisol</a>
+      <a href="testosterone.html" aria-current="page">Testosterone</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <h1>The Shape of a Signal</h1>
+    <p class="subtitle">Almost all of it is bound and inert. The number on the report is not the number doing the work.</p>
+    <div class="scroll-cue">scroll ↓</div>
+  </section>
+
+  <!-- 01 -->
+  <section class="reveal" id="part-1">
+    <div class="section-inner">
+      <p class="eyebrow">01 · THE PREMISE</p>
+      <h2>Part One — One number, three problems</h2>
+      <p>
+        A total testosterone result is a single number with three things
+        wrong with it. First, it's <strong>diurnal</strong> — it peaks in the
+        morning and drifts down all day, so an afternoon draw can read low on
+        a perfectly normal man. Second, it's <strong>variable</strong>: the
+        same person tested on two mornings can differ enough to cross a
+        reference-range boundary, which is why guidelines want two draws.
+      </p>
+      <p>
+        Third, and most importantly, roughly <strong>98% of it is bound</strong> —
+        held tightly by SHBG and loosely by albumin — and only the unbound
+        fraction is active. Two men with identical total testosterone and very
+        different SHBG have different amounts of usable hormone. That's the
+        gap this page is mostly about.
+      </p>
+      <p>
+        What follows: the <strong>panel</strong> and what each marker is for,
+        the <strong>levers</strong> that actually move it ranked by how good
+        the evidence is, the <strong>workup</strong> a clinician runs, the
+        honest <strong>ledger</strong> on replacement therapy, and a
+        calculator for your own numbers.
+      </p>
+      <p class="caption">
+        Framing note: this page treats low testosterone as a medical question
+        with a diagnostic pathway, not as an optimisation target. Symptoms
+        plus two confirmed morning draws is the entry point, and a doctor is
+        the person who interprets them.
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="reveal" id="part-2">
+    <div class="section-inner">
+      <p class="eyebrow">02 · THE PANEL</p>
+      <h2>Part Two — What each marker is for</h2>
+      <p>
+        Five values, each answering a different question. Reference bands
+        below are typical adult male intervals — assays differ enough that
+        your own lab's printed range is the one that counts. Enter your
+        numbers in Part Six and they'll appear on these bands.
+      </p>
+      <div class="chart-wrap">
+        <svg id="panel-chart" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <dl class="marker-notes">
+        <dt>Total testosterone</dt>
+        <dd>Everything in the blood, bound and free. Morning draw, twice, before drawing conclusions.</dd>
+        <dt>Free testosterone</dt>
+        <dd>The unbound 1-2% that's actually active. Calculated from total, SHBG and albumin — or measured directly by equilibrium dialysis, which is the better test and the rarer one.</dd>
+        <dt>SHBG</dt>
+        <dd>The carrier. Raised by age, thyroid excess, liver disease and some drugs; lowered by obesity, insulin resistance and steroids. It's why total alone can mislead in both directions.</dd>
+        <dt>LH</dt>
+        <dd>The pituitary's instruction to the testes. With low testosterone, high LH points at the testes; low or normal LH points upstream — and upstream causes are the ones that are often fixable.</dd>
+        <dt>Estradiol</dt>
+        <dd>Made from testosterone by aromatase. Men need it for bone, libido and mood. Crushing it with an aromatase inhibitor causes its own problems.</dd>
+      </dl>
+
+      <div class="diagram-block">
+        <p class="eyebrow">THE MECHANISM</p>
+        <h3>The axis, and its brake</h3>
+        <svg id="hpg-diagram" viewBox="0 0 520 420" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        The same self-limiting design as the cortisol axis on
+        <a href="cortisol.html">the previous page</a>. It's also exactly why
+        taking testosterone shuts your own production down: the loop can't
+        tell where the hormone came from.
+      </p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="reveal" id="part-3">
+    <div class="section-inner">
+      <p class="eyebrow">03 · THE LEVERS</p>
+      <h2>Part Three — What actually moves it</h2>
+      <p>
+        Ten levers, tagged by how well the evidence holds up rather than by
+        how often they're advertised. The well-supported ones are unglamorous
+        and mostly free; the oversold ones are the profitable ones. Filter by
+        evidence level to see that pattern directly.
+      </p>
+
+      <div class="library-controls">
+        <div id="lever-tiers" class="filter-row" role="group" aria-label="Filter by evidence level"></div>
+        <div id="lever-categories" class="filter-row" role="group" aria-label="Filter by category"></div>
+        <div class="filter-row">
+          <button id="lever-expand" class="toggle-btn" type="button">Expand all</button>
+        </div>
+        <p id="lever-count" class="caption"></p>
+      </div>
+
+      <div id="lever-library" class="exercise-library"></div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="reveal" id="part-4">
+    <div class="section-inner">
+      <p class="eyebrow">04 · THE WORKUP</p>
+      <h2>Part Four — What good care looks like</h2>
+      <p>
+        Not a protocol to run on yourself — a sketch of the standard sequence,
+        so you can tell whether the care you're being offered resembles it. A
+        clinic that skips straight from one afternoon blood draw to a
+        prescription has skipped the part that finds the cause.
+      </p>
+      <div class="chart-wrap">
+        <svg id="workup-diagram" viewBox="0 0 760 560" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <p class="caption">
+        The branch in the middle is the whole point. Secondary hypogonadism —
+        low testosterone with a low or normal LH — is where the reversible
+        causes live: opioids, anabolic steroid use, obesity, sleep apnoea,
+        energy deficit, thyroid disease, a prolactin-secreting tumour. Several
+        of those are treatable, and treating them can put the axis back.
+      </p>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="reveal" id="part-5">
+    <div class="section-inner">
+      <p class="eyebrow">05 · THE LEDGER</p>
+      <h2>Part Five — The honest ledger on TRT</h2>
+      <p>
+        Testosterone therapy works, in the narrow sense that taking a hormone
+        raises that hormone. The question worth asking isn't whether it works
+        — it's what it costs and what it forecloses.
+      </p>
+
+      <div class="ledger">
+        <div class="ledger-col credit">
+          <h3>What it does</h3>
+          <ul>
+            <li><strong>Libido and sexual function</strong> — the most consistent benefit in trials of genuinely hypogonadal men.</li>
+            <li><strong>Lean mass and strength</strong> — real, dose-dependent, and larger when combined with training.</li>
+            <li><strong>Bone density</strong> — improves, which matters in long-standing deficiency.</li>
+            <li><strong>Mood and energy</strong> — improves on average in deficient men; much less clear when levels start normal.</li>
+          </ul>
+        </div>
+        <div class="ledger-col debit">
+          <h3>What it costs</h3>
+          <ul>
+            <li><strong>Fertility</strong> — suppresses sperm production, sometimes permanently after prolonged use. Bank sperm or discuss hCG before starting, not after.</li>
+            <li><strong>Your own production</strong> — shuts down while you're on it, and recovery after years is unreliable.</li>
+            <li><strong>Haematocrit</strong> — rises, sometimes enough to need dose changes or blood donation.</li>
+            <li><strong>Permanence</strong> — in practice it's usually a lifelong commitment with ongoing monitoring.</li>
+            <li><strong>Sleep apnoea</strong> — can worsen untreated apnoea, which is why it gets screened first.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rules-block">
+        <h3>Questions worth asking before you start</h3>
+        <ol class="rules-list">
+          <li><strong>Have two morning draws confirmed it?</strong> One low afternoon result is not a diagnosis.</li>
+          <li><strong>Has anyone looked for a cause?</strong> LH/FSH, prolactin, iron studies, a weight and medication history, an apnoea screen.</li>
+          <li><strong>Do I want children, ever?</strong> This is the decision that's hardest to reverse.</li>
+          <li><strong>Who monitors me, and how often?</strong> If the answer is "we'll email you a refill", that's the answer to a different question.</li>
+          <li><strong>What happens if I stop?</strong> Ask before starting, not two years in.</li>
+        </ol>
+      </div>
+      <p class="caption">
+        The cardiovascular safety picture has improved with recent trial
+        evidence in men treated for diagnosed hypogonadism. "Not shown to be
+        harmful when treating a deficiency" is a much narrower claim than
+        "safe for anyone who wants more", and the second one keeps getting
+        made on the strength of the first.
+      </p>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="reveal" id="part-6">
+    <div class="section-inner">
+      <p class="eyebrow">06 · THE CALCULATOR</p>
+      <h2>Part Six — Your panel, on your device</h2>
+      <p>
+        Total testosterone and SHBG are enough to calculate the free fraction
+        using the Vermeulen equation — the same one most online calculators
+        run. Values you enter are stored in <code>localStorage</code>, never
+        sent anywhere, and also plotted on the reference bands back in Part
+        Two.
+      </p>
+
+      <div class="you-panel">
+        <h3>Calculate free testosterone</h3>
+        <p class="caption">
+          Albumin defaults to 4.3 g/dL if you leave it blank, which is a
+          typical value. The calculation is an estimate — it assumes fixed
+          binding constants and disagrees with equilibrium dialysis at the
+          extremes.
+        </p>
+
+        <form id="panel-form" class="labs-form">
+          <label>
+            <span>Total testosterone (ng/dL)</span>
+            <input type="number" step="1" min="0" id="input-total" placeholder="e.g. 550" />
+          </label>
+          <label>
+            <span>SHBG (nmol/L)</span>
+            <input type="number" step="0.1" min="0" id="input-shbg" placeholder="e.g. 32" />
+          </label>
+          <label>
+            <span>Albumin (g/dL)</span>
+            <input type="number" step="0.1" min="0" id="input-albumin" placeholder="4.3" />
+          </label>
+          <label>
+            <span>LH (IU/L, optional)</span>
+            <input type="number" step="0.1" min="0" id="input-lh" placeholder="e.g. 4.2" />
+          </label>
+        </form>
+
+        <div id="free-t-result" class="homa-result"></div>
+        <div id="panel-readout" class="percent-table"></div>
+
+        <button id="clear-panel-data" class="toggle-btn" type="button">Clear my data</button>
+      </div>
+
+      <p class="caption" style="margin-top: 2rem;">
+        Three of the levers in Part Three are the subject of another page on
+        this site: sleep and stress load on
+        <a href="cortisol.html">the cortisol page</a>, training on
+        <a href="training.html">the training page</a>, and body composition
+        on both plus <a href="glucose.html">the glucose page</a>. That
+        overlap isn't a coincidence — it's most of the actual answer.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with plain HTML/CSS/JS · deployed on Vercel</p>
+    <p class="disclaimer">
+      General information, not medical advice, and not a substitute for a
+      diagnosis. Reference bands are typical adult male intervals that vary
+      by lab and assay. Decisions about testing or treatment belong with a
+      doctor who can see your full history.
+    </p>
+  </footer>
+
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Section navigator">
+    <div class="chapter-count">
+      <span id="chapter-current">01</span><span class="chapter-total"> / 06</span>
+    </div>
+    <div class="chapter-dots">
+      <button class="chapter-dot" data-target="part-1" aria-label="Jump to Part One"></button>
+      <button class="chapter-dot" data-target="part-2" aria-label="Jump to Part Two"></button>
+      <button class="chapter-dot" data-target="part-3" aria-label="Jump to Part Three"></button>
+      <button class="chapter-dot" data-target="part-4" aria-label="Jump to Part Four"></button>
+      <button class="chapter-dot" data-target="part-5" aria-label="Jump to Part Five"></button>
+      <button class="chapter-dot" data-target="part-6" aria-label="Jump to Part Six"></button>
+    </div>
+  </nav>
+
+  <script type="module" src="js/testosterone/main.js"></script>
+</body>
+</html>
