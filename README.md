@@ -13,7 +13,7 @@ Plain HTML/CSS/JS. No build step, no framework, no dependencies, no backend.
 | --- | --- | --- |
 | `index.html` | Four Curves | Landing page — the four essays and how they connect |
 | `glucose.html` | The Shape of a Spike | Post-meal curves, glycemic load, food pairing, HOMA-IR calculator |
-| `training.html` | The Shape of a Session | Intensity zones, four schools, 32 movements with instructions, four weekly templates, 1RM calculator |
+| `training.html` | The Shape of a Session | Intensity zones, four schools, 36 movements with instructions and evidence notes, four weekly templates, 1RM calculator |
 | `cortisol.html` | The Shape of a Day | Diurnal rhythm, the HPA axis, 14 practices, a daily template, caffeine maths and a seven-day check-in |
 | `testosterone.html` | The Shape of a Signal | Total vs free vs SHBG, evidence-ranked levers, the clinical workup, the TRT ledger, a Vermeulen free-T calculator |
 

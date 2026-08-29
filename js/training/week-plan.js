@@ -9,7 +9,7 @@ const PROGRAMS = [
     slug: "hybrid",
     name: "Hybrid week",
     blurb:
-      "Three lifting days, two easy aerobic days, one interval day, elastic work before the lifts, and a post-meal walk every day. The default if you want a bit of all four schools.",
+      "Three lifting days, two easy aerobic days, one interval day, elastic work before the lifts and a tendon protocol after them, and a post-meal walk every day. The default if you want a bit of all four schools.",
     days: [
       {
         day: "Mon", title: "Lift A — lower emphasis", kind: "lift", duration: "50 min",
@@ -17,6 +17,7 @@ const PROGRAMS = [
           { label: "Warm-up", items: ["5 min easy bike", "360° lunge matrix × 2 rounds", "Pogo hops — 3 × 15"] },
           { label: "Main", items: ["Goblet or low-bar back squat — 3 × 5-10", "Romanian deadlift — 3 × 6-10", "Dumbbell bench press — 3 × 8-12"] },
           { label: "Finisher", items: ["Farmer's carry — 3 × 30-40m", "Plank — 3 × 20-45s"] },
+          { label: "Tendon", items: ["Long-duration heavy isometric — 4 × 3s ramp + 3s hold"] },
           POST_MEAL,
         ],
       },
@@ -34,6 +35,7 @@ const PROGRAMS = [
           { label: "Warm-up", items: ["5 min easy cardio", "Band face pull × 15", "Rotational med-ball throw — 2 × 6/side"] },
           { label: "Main", items: ["Overhead press — 3 × 5-10", "Pull-up or lat pulldown — 3 × 4-10", "Dumbbell row — 3 × 8-12/side"] },
           { label: "Finisher", items: ["Pallof press — 3 × 8-12/side", "Face pull — 2 × 12-20"] },
+          { label: "Tendon", items: ["Loaded long-length work — 2 × 8-12 for a lagging area"] },
           POST_MEAL,
         ],
       },
@@ -52,6 +54,7 @@ const PROGRAMS = [
           { label: "Warm-up", items: ["5 min easy cardio", "Kettlebell swing — 3 × 10 light"] },
           { label: "Main", items: ["Split squat — 3 × 8-12/side", "Hip thrust — 3 × 10-15", "Inverted row — 3 × 8-15", "Push-up — 3 × 6-15"] },
           { label: "Finisher", items: ["Dead bug — 3 × 6-10/side"] },
+          { label: "Tendon", items: ["Long-duration heavy isometric — 4 × 3s ramp + 3s hold"] },
           POST_MEAL,
         ],
       },

@@ -11,7 +11,9 @@ function toItem(ex) {
     name: ex.name,
     category: ex.category,
     tags: ex.schools,
-    meta: `${category.name} · ${ex.level}${ex.bodyweight ? " · no equipment needed" : ""}`,
+    meta: [category.name, ex.level, ex.evidence, ex.bodyweight ? "no equipment needed" : null]
+      .filter(Boolean)
+      .join(" · "),
     chips: [ex.prescription, ex.equipment],
     summary: ex.why,
     sections: [

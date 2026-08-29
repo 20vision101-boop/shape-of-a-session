@@ -11,6 +11,7 @@ export const CATEGORIES = [
   { slug: "core", name: "Core & carries" },
   { slug: "power", name: "Power & elastic" },
   { slug: "cardio", name: "Conditioning" },
+  { slug: "tendon", name: "Tendon & connective tissue" },
   { slug: "mobility", name: "Mobility & tissue" },
 ];
 
@@ -71,20 +72,20 @@ export const SCHOOLS = [
   },
   {
     slug: "fascia",
-    name: "Fascial elasticity",
-    lineage: "Thomas Myers · fascia training research",
+    name: "Connective-tissue loading",
+    lineage: "Stecco · Huijing · Arampatzis, with Schleip's Fascial Fitness",
     color: "#7cffb2",
     thesis:
-      "Connective tissue is a load-bearing, elastic network, not packing material. Fascia-oriented training loads it the way it's built to be loaded — springy rebounds, long-lever stretches under tension, and multi-directional movement — on the argument that tendon and fascial stiffness is what makes movement efficient and remodels slowly, over months.",
+      "Connective tissue is a load-bearing, elastic, richly innervated network — not packing material. Four things about it are well established: it's continuous (endomysium runs into aponeurosis runs into tendon, with no clean seam), it transmits force sideways between muscles, tendon stores and returns elastic energy, and it remodels far more slowly than muscle does. This school trains those properties directly. The popular programming built on top of them is extrapolation, and it's labelled as such below.",
     signature: [
-      "Elastic bounce: short ground contacts, rebound rather than grind",
-      "Loaded stretch: strength through the longest range, held under tension",
-      "Multi-directional and rotational work, not just sagittal-plane lifts",
-      "Long timescales — collagen remodels over 6-24 months, not weeks",
+      "High-load, long-duration contractions — the loading that actually stiffens tendon",
+      "Elastic work: short ground contacts, rebound rather than grind",
+      "Strength through the longest ranges, not just the strongest ones",
+      "Progression measured in months, because collagen turnover is slow",
     ],
-    bestAt: "Movement efficiency, tendon resilience, and ranges that pure barbell work never visits.",
+    bestAt: "Tendon resilience, movement efficiency, and ranges pure barbell work never visits.",
     blindSpot:
-      "The evidence base is thinner and younger than the strength literature. Treat the mechanisms as plausible and the claims as provisional.",
+      "The gap between the anatomy and the training claims is wide. Myofascial 'lines', rolling to 'release' tissue, and most fascia-branded protocols rest on far thinner evidence than the tendon-loading work they borrow credibility from — and nothing here changes structure in weeks.",
   },
 ];
 
@@ -707,6 +708,107 @@ export const EXERCISES = [
   },
 
   /* --- Fascial elasticity: springs, long levers, tissue ----------------- */
+
+  /* --- Connective tissue: the loading the evidence actually supports ----- */
+  {
+    name: "Long-duration heavy isometric",
+    schools: ["fascia", "strength"],
+    category: "tendon",
+    equipment: "A leg press, a rack with pins, or any immovable resistance",
+    bodyweight: false,
+    level: "Intermediate",
+    focus: "Tendon and aponeurosis stiffness",
+    prescription: "4-5 reps × 3s ramp + 3s hold, 3-4× weekly",
+    evidence: "Strong — the best-supported tendon protocol there is",
+    why:
+      "The clearest finding in the whole connective-tissue literature: tendon adapts to load magnitude and how long that load is held, not to how fast you move. Arampatzis and Bohm's group have shown measurable increases in tendon stiffness from high-load isometrics held for a few seconds — changes that show up around the twelve-week mark and keep going. Fast heavy reps don't produce the same adaptation, which is why this is its own exercise rather than a note on the squat.",
+    steps: [
+      "Pick a joint action you can load safely against something immovable — leg press, a bar set on rack pins, a wall, a heavy machine.",
+      "Build force smoothly over about 3 seconds until you reach roughly 90% of a maximal effort.",
+      "Hold that effort for 3 seconds, breathing rather than straining against a closed throat.",
+      "Release over a second or two, rest 2-3 minutes, and repeat for 4-5 reps.",
+      "Three or four sessions a week, and judge it at twelve weeks rather than twelve days.",
+    ],
+    cues: [
+      "Effort level is the variable. A comfortable hold is not the stimulus — this should be genuinely hard by the second or third second.",
+      "Joint angle matters: the adaptation is largely specific to the position you train, so pick the one that matters for your sport or your symptoms.",
+      "Skip this if you have an acutely painful tendon and haven't had it looked at — it's a training protocol, not a rehab prescription.",
+    ],
+  },
+  {
+    name: "Heavy slow resistance",
+    schools: ["fascia", "strength"],
+    category: "tendon",
+    equipment: "Barbell, machine or dumbbells",
+    bodyweight: false,
+    level: "Intermediate",
+    focus: "Tendon remodelling, muscle, full-range strength",
+    prescription: "3-4 sets × 6-8 reps, 3s down and 3s up",
+    evidence: "Strong — good RCT support in tendinopathy",
+    why:
+      "Deliberately slow reps under heavy load, through the full range. Kongsgaard's trials found it as effective as classic eccentric protocols for patellar tendinopathy with better adherence, and it's become a standard approach to stubborn tendon problems. It also happens to be excellent general strength training, which is a good sign rather than a suspicious one.",
+    steps: [
+      "Choose the movement that loads the tendon in question — leg extension or squat for patellar, calf raise for Achilles, curl or press variants for elbow.",
+      "Load it so 6-8 reps is genuinely hard.",
+      "Take 3 seconds to lower and 3 seconds to lift. Six seconds of tension per rep is the whole point.",
+      "3-4 sets, three times a week, progressing load as it gets easier.",
+      "Expect 12 weeks or more before judging it.",
+    ],
+    cues: [
+      "Some discomfort in a rehabilitating tendon is usually acceptable; sharp pain, or pain that's worse the next morning, means back off the load.",
+      "Full range beats partial range here — the long end is where the tissue adapts.",
+      "If it's an actual injury rather than a training goal, do this with a physio rather than from a web page.",
+    ],
+  },
+  {
+    name: "Loaded long-length work",
+    schools: ["fascia"],
+    category: "tendon",
+    equipment: "Dumbbells or cables",
+    bodyweight: false,
+    level: "Intermediate",
+    focus: "Strength at end range, tissue tolerance in stretched positions",
+    prescription: "2-3 sets × 8-12 reps, controlled",
+    evidence: "Reasonable — long-length training has good hypertrophy data",
+    why:
+      "Strength is specific to the range you train, and most people train the middle. Loading a muscle where it's longest builds tolerance exactly where tissue tends to get injured — and the recent hypertrophy literature suggests long-length work may build more muscle than short-length work for the same effort, which is a rare case of two goals pointing the same way.",
+    steps: [
+      "Pick movements that load the stretched position: deficit split squats, incline dumbbell curls, overhead cable triceps, RDLs to a full hamstring stretch, seated calf raises with the heel dropped.",
+      "Use a load you can control through the whole range — the bottom is the working part, not the resting part.",
+      "Pause for a beat in the lengthened position on every rep.",
+      "8-12 reps, 2-3 sets, twice a week per area.",
+    ],
+    cues: [
+      "Controlled, not bounced. A stretch position under momentum is where things tear.",
+      "Expect more soreness than usual from long-length work, especially at first. Build up over weeks.",
+      "Range should come from the joint, not from a spine that rounds to fake it.",
+    ],
+  },
+  {
+    name: "Collagen and vitamin C timing",
+    schools: ["fascia"],
+    category: "tendon",
+    equipment: "Gelatin or hydrolysed collagen, plus vitamin C",
+    bodyweight: false,
+    level: "Beginner",
+    focus: "Collagen synthesis around loading",
+    prescription: "~15g with vitamin C, 30-60 min before short loading bouts",
+    evidence: "Promising, not settled — strong mechanism, early human data",
+    why:
+      "Keith Baar's lab at UC Davis found that collagen synthesis responds to short, frequent loading bouts — roughly ten minutes, separated by six hours — and that having the amino-acid building blocks circulating beforehand helps. The mechanism is good and the in vitro work is convincing; the human outcome data is early. Included because it's cheap and plausible, tagged honestly because it isn't proven.",
+    steps: [
+      "Take around 15g of gelatin or hydrolysed collagen with a source of vitamin C.",
+      "Wait 30-60 minutes so blood amino acid levels peak.",
+      "Do a short loading bout — 5-10 minutes of the tendon work above, not a full session.",
+      "Leave about six hours before repeating, if you're doing this twice a day.",
+      "Give it months. This is a slow-tissue intervention.",
+    ],
+    cues: [
+      "Collagen is not a magic protein — total protein intake and actual loading matter far more.",
+      "The loading is the intervention; the supplement is at best an amplifier of it.",
+      "Nothing here is established enough to spend real money on. Gelatin is cheap; keep it that way.",
+    ],
+  },
   {
     name: "Pogo hops",
     schools: ["fascia", "metcon"],
@@ -716,6 +818,7 @@ export const EXERCISES = [
     level: "Beginner",
     focus: "Achilles and plantar fascia stiffness, elastic rebound",
     prescription: "3-5 sets × 15-20 contacts, fresh, before lifting",
+    evidence: "Strong for elastic performance",
     why:
       "The simplest expression of the fascial-elasticity idea: store energy on landing and give it straight back, with the muscle barely changing length. Tendon and fascia handle the spring — training it is what makes running and jumping feel cheap rather than laborious.",
     steps: [
@@ -740,6 +843,7 @@ export const EXERCISES = [
     level: "Beginner",
     focus: "Obliques, hips, the diagonal sling from hip to opposite shoulder",
     prescription: "3 sets × 6-8 throws per side",
+    evidence: "Reasonable for power; thin as 'fascia work'",
     why:
       "Most training happens in one plane; almost nothing you do outside the gym does. A rotational throw loads the diagonal myofascial sling from one hip to the opposite shoulder as a spring — wind up, then let it snap back — which is the mechanism fascial work is actually about.",
     steps: [
@@ -764,6 +868,7 @@ export const EXERCISES = [
     level: "Beginner",
     focus: "Hips, adductors, ankles, multi-directional tissue loading",
     prescription: "2 rounds × 4 directions per leg, as a warm-up",
+    evidence: "Thin — sensible warm-up, extrapolated rationale",
     why:
       "One leg, four directions: forward, diagonal, lateral, and rotational-backward. Fascial tissue is organised in continuous multi-directional sheets, and loading it in only one plane leaves most of it untrained — this covers the compass in about ninety seconds.",
     steps: [
@@ -789,8 +894,9 @@ export const EXERCISES = [
     level: "Beginner",
     focus: "Tissue glide, short-term range of motion, sensation",
     prescription: "5-10 min, most days, or before training",
+    evidence: "Good for short-term range; neural, not structural",
     why:
-      "The honest version: rolling reliably increases range of motion for a while and usually feels good, and the current best explanation is neural — changing how the tissue is sensed — rather than physically breaking anything down. Useful as a warm-up and a habit, not as a structural fix.",
+      "Kept here for what it actually is. Rolling reliably buys range of motion for minutes to an hour and usually feels good; the mechanism is almost certainly neural — changing how the tissue is sensed. The forces a person can generate are nowhere near enough to deform dense collagen, so 'breaking up adhesions' and 'releasing fascia' describe something that isn't happening. A decent warm-up tool, not a treatment.",
     steps: [
       "Pick one area — calves, quads, glutes, lats, upper back.",
       "Rest the area on the roller and support some of your bodyweight with your hands or the other leg.",
