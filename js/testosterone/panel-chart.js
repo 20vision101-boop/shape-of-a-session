@@ -37,7 +37,7 @@ function drawPanelChart() {
       <line x1="${M.left}" y1="${barY + barH / 2}" x2="${M.left + innerW}" y2="${barY + barH / 2}"
             stroke="rgba(255,255,255,0.08)" stroke-width="1" />
       <rect x="${lowX}" y="${barY}" width="${highX - lowX}" height="${barH}" rx="5"
-            fill="rgba(124,158,255,0.28)" stroke="#7c9eff" stroke-width="1" />
+            fill="rgba(121,220,232,0.28)" stroke="#79dce8" stroke-width="1" />
       <text x="${M.left - 14}" y="${barY + barH * 0.75}" text-anchor="end" class="zone-name">${m.name}</text>
       <text x="${lowX}" y="${barY + barH + 15}" class="zone-sub">${m.low}</text>
       <text x="${highX}" y="${barY + barH + 15}" text-anchor="end" class="zone-sub">${m.high} ${m.unit}</text>

@@ -23,7 +23,7 @@ export const SCHOOLS = [
     slug: "strength",
     name: "Starting Strength",
     lineage: "Mark Rippetoe",
-    color: "#7c9eff",
+    color: "#79dce8",
     thesis:
       "A handful of barbell lifts, done heavy, added to a little at a time. Rippetoe's argument is that whole-body barbell movements through a full range of motion are the most efficient way to make a novice stronger — and that a novice can add weight to the bar every single session for months before anything cleverer is needed.",
     signature: [

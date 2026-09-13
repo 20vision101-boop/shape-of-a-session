@@ -2,6 +2,7 @@
 import { initReveal } from "../shared/reveal.js";
 import { initChapterNav } from "../shared/chapter-nav.js";
 import { initHero } from "../shared/hero/index.js";
+import { initEntrance } from "../shared/entrance.js";
 import { initRhythmChart } from "./rhythm-chart.js";
 import { initHpaDiagram } from "./hpa-diagram.js";
 import { initInputsGrid } from "./inputs-grid.js";
@@ -18,3 +19,4 @@ initDayTimeline();
 initDayLog();
 initChapterNav();
 initHero();
+initEntrance();

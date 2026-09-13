@@ -20,6 +20,25 @@ Plain HTML/CSS/JS. No build step, no framework, no dependencies, no backend.
 Every panel stores to `localStorage` on the reader's own device. Nothing is
 sent anywhere.
 
+## Design
+
+The visual language comes from the reference hero in `spaceedu-hero.html`:
+navy ground, cyan rules, Prata over Hanken Grotesk, glossy white pills, and
+one scale unit. `--u` is that unit — one design pixel from a 1353-wide
+reference — so hero geometry is written as `calc(N * var(--u))` and the whole
+composition scales as a piece. Body copy below the fold uses ordinary type
+scales, because an essay has to reflow as it grows; only the hero is a fixed
+composition.
+
+Each essay carries its own accent through `data-essay` on `<body>`: glucose
+cyan, training orange, cortisol amber, testosterone green. The eyebrow, the
+hero rule, the chapter dots and the nav underline all read `--essay`, so a
+page's identity is one attribute.
+
+Each hero shows two neighbouring essays as orbs cropped by the screen edges —
+the planet-switcher composition from the reference, with navigation in place
+of the swap. The orbs are CSS gradients, so there is no artwork to ship.
+
 ## Structure
 
 ```
@@ -27,7 +46,8 @@ index.html  glucose.html  training.html  cortisol.html  testosterone.html
 style.css        base theme, hero, reveal-on-scroll, chapter nav, footer
 components.css   everything else: site nav, cards, libraries, tables, grids
 js/
-  shared/        reveal.js · chapter-nav.js · library.js · hero/
+  shared/        reveal.js · chapter-nav.js · library.js · palette.js ·
+                 entrance.js · hero/
   glucose/       main.js + the nutrition modules
   training/      main.js + exercise-data.js and the training modules
   cortisol/      main.js + practices-data.js and the cortisol modules
@@ -43,6 +63,10 @@ are genuinely shared:
 - **`js/shared/library.js`** — the filterable, expandable card library used by
   the movement library, the practice library and the lever library. Each page
   supplies an adapter that maps its own data onto the component's item shape
+- **`js/shared/palette.js`** — one palette for every hand-drawn chart and
+  diagram, so a retune is one file rather than thirty-two edits
+- **`js/shared/entrance.js`** — plays the hero entrance once, then removes its
+  own classes and leaves the page in its authored static state
 
 ## Editing the content
 

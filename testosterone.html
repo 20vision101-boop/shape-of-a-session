@@ -11,13 +11,25 @@
   <meta property="og:description" content="98% of it is bound and inert. Total versus free versus SHBG, the levers ranked by evidence, and what a real clinical workup looks like." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script>
+    /* Blocking on purpose: the first frame must be composed, not a flash of
+       the finished hero. Runs before the stylesheet. */
+    (function(){try{
+      if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('anim');
+      }
+    }catch(e){}})();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="components.css" />
 </head>
-<body>
+<body data-essay="testosterone">
 
   <nav class="site-nav" aria-label="Essays">
-    <a class="site-nav-brand" href="index.html">Four Curves</a>
+    <a class="site-nav-brand" href="index.html">four<i>curves</i></a>
     <div class="site-nav-links">
       <a href="glucose.html">Glucose</a>
       <a href="training.html">Training</a>
@@ -29,9 +41,20 @@
   <!-- HERO -->
   <section class="hero">
     <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-    <h1>The Shape of a Signal</h1>
-    <p class="subtitle">Almost all of it is bound and inert. The number on the report is not the number doing the work.</p>
-    <div class="scroll-cue">scroll ↓</div>
+    <div class="hero-copy">
+      <p class="h-eyebrow"><span class="ent-mask"><span class="ent-line">CURVE 04</span></span></p>
+      <h1 class="h-title"><span class="ent-mask"><span class="ent-line">The Shape of a Signal</span></span></h1>
+      <div class="h-rule"><span></span></div>
+      <p class="h-lede">Almost all of it is bound and inert. The number on the report is not the number doing the work.</p>
+      <div class="h-cta">
+        <a class="orb orb-l" style="--orb: #ffd27c" href="cortisol.html" aria-label="Read Cortisol"></a>
+        <a class="pill" href="#part-1">START READING</a>
+        <a class="orb orb-r" style="--orb: #79dce8" href="glucose.html" aria-label="Read Glucose"></a>
+        <span class="orb-label label-l">CORTISOL</span>
+        <span class="orb-label label-r">GLUCOSE</span>
+      </div>
+    </div>
+    <div class="scroll-cue">scroll</div>
   </section>
 
   <!-- 01 -->

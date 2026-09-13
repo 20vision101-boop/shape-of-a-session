@@ -15,7 +15,7 @@ const glucoseSeries = [
   },
   {
     name: "+ protein & fiber",
-    color: "#7c9eff",
+    color: "#79dce8",
     points: [
       [0, 92], [15, 100], [30, 118], [45, 131], [60, 128],
       [75, 116], [90, 104], [105, 96], [120, 92], [150, 90],
@@ -92,7 +92,7 @@ function drawChart() {
 
   svg.innerHTML = `
     <rect x="${M.left}" y="${bandTop}" width="${innerW}" height="${bandBottom - bandTop}"
-          fill="rgba(124,158,255,0.06)" />
+          fill="rgba(121,220,232,0.07)" />
     ${gridLines}
     ${xLabels}
     <text x="${M.left - 40}" y="${M.top - 10}" class="axis-label">mg/dL</text>

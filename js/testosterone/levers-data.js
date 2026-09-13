@@ -15,7 +15,7 @@ export const CATEGORIES = [
 /* How well the evidence holds up — drives the second filter row. */
 export const TIERS = [
   { slug: "strong", name: "Well supported", color: "#7cffb2" },
-  { slug: "moderate", name: "Reasonable", color: "#7c9eff" },
+  { slug: "moderate", name: "Reasonable", color: "#79dce8" },
   { slug: "weak", name: "Thin or oversold", color: "#ffd27c" },
 ];
 

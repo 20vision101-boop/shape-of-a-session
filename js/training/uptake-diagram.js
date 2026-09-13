@@ -14,7 +14,7 @@ function drawUptakeDiagram() {
 
   const paths = [
     {
-      color: "#7c9eff",
+      color: "#79dce8",
       x: 130,
       label: "Insulin path",
       steps: ["Meal → insulin", "Receptor signals", "GLUT4 moves out"],
@@ -42,7 +42,7 @@ function drawUptakeDiagram() {
                    marker-end="url(#uptake-arrow-${p.color.slice(1)})" />`
               : "";
           return `
-            <circle cx="${p.x}" cy="${y}" r="7" fill="#0a0a0f" stroke="${p.color}" stroke-width="2" filter="url(#uptake-glow)" />
+            <circle cx="${p.x}" cy="${y}" r="7" fill="#04101f" stroke="${p.color}" stroke-width="2" filter="url(#uptake-glow)" />
             <text x="${p.x}" y="${y - 22}" text-anchor="middle" class="loop-label">${s}</text>
             ${connector}
           `;
@@ -84,7 +84,7 @@ function drawUptakeDiagram() {
         <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
       </filter>
       <linearGradient id="cell-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#7c9eff" stop-opacity="0.18" />
+        <stop offset="0%" stop-color="#79dce8" stop-opacity="0.18" />
         <stop offset="100%" stop-color="#7cffb2" stop-opacity="0.18" />
       </linearGradient>
     </defs>

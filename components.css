@@ -7,7 +7,7 @@
   font-size: 0.75rem;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
-  background: rgba(124, 158, 255, 0.14);
+  background: rgba(121, 220, 232, 0.14);
   color: var(--accent);
   white-space: nowrap;
 }
@@ -39,7 +39,7 @@
 
 a {
   color: var(--accent);
-  text-decoration-color: rgba(124, 158, 255, 0.4);
+  text-decoration-color: rgba(121, 220, 232, 0.4);
 }
 
 /* --- Part Two: zone chart labels ------------------------------------ */
@@ -62,15 +62,17 @@ a {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-top: 3px solid var(--school);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .school-head h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.28rem;
   color: var(--school);
 }
 
@@ -141,18 +143,18 @@ a {
 }
 
 .exercise-card {
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 1rem 1.25rem 1.1rem;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.exercise-card:hover { border-color: rgba(124, 158, 255, 0.35); }
+.exercise-card:hover { border-color: rgba(121, 220, 232, 0.35); }
 
 .exercise-card.open {
   border-color: var(--accent);
-  background: rgba(124, 158, 255, 0.04);
+  background: rgba(121, 220, 232, 0.04);
 }
 
 .exercise-head {
@@ -177,8 +179,10 @@ a {
 }
 
 .exercise-name {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.12rem;
+  line-height: 1.25;
   color: var(--text);
 }
 
@@ -246,7 +250,7 @@ a {
   gap: 0.3rem;
   padding: 0.75rem 0.5rem;
   min-height: 110px;
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   color: var(--text);
@@ -265,7 +269,7 @@ a {
 
 .day-card.active {
   border-color: var(--accent);
-  background: rgba(124, 158, 255, 0.08);
+  background: rgba(121, 220, 232, 0.08);
 }
 
 .day-name {
@@ -288,7 +292,7 @@ a {
   padding: 1.25rem 1.5rem 1.5rem;
   background: var(--bg-alt);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .day-detail-head {
@@ -320,7 +324,7 @@ a {
   padding: 1.5rem;
   background: var(--bg-alt);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .rules-block h3 { margin: 0 0 0.75rem; font-size: 1.05rem; }
@@ -384,61 +388,6 @@ a {
   .exercise-head { align-items: flex-start; }
 }
 
-/* --- site nav (all pages) -------------------------------------------- */
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 0.75rem 1.25rem;
-  background: rgba(10, 10, 15, 0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.site-nav-brand {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.site-nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.site-nav-links a {
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  color: var(--muted);
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.site-nav-links a:hover {
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-.site-nav-links a[aria-current="page"] {
-  color: var(--accent);
-  background: rgba(124, 158, 255, 0.1);
-  border-color: rgba(124, 158, 255, 0.4);
-}
-
-/* The chapter nav would collide with the sticky site nav. */
-.chapter-nav { top: 4.5rem; }
-
 /* --- landing page ----------------------------------------------------- */
 .essay-grid {
   margin-top: 2.5rem;
@@ -450,10 +399,10 @@ a {
 .essay-card {
   display: block;
   padding: 1.5rem;
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-left: 3px solid var(--essay);
-  border-radius: 12px;
+  border-radius: 14px;
   text-decoration: none;
   color: inherit;
   transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
@@ -475,7 +424,10 @@ a {
 
 .essay-card h3 {
   margin: 0 0 0.6rem;
-  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.2;
   color: var(--text);
 }
 
@@ -503,9 +455,9 @@ a {
 
 .input-card {
   padding: 1.25rem;
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .input-head {
@@ -573,7 +525,7 @@ a {
 }
 
 .labs-inline input {
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   padding: 0.5rem 0.65rem;
@@ -592,7 +544,7 @@ a {
   height: 34px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: var(--bg);
+  background: var(--bg-card);
   color: var(--muted);
   font: inherit;
   cursor: pointer;
@@ -603,7 +555,7 @@ a {
 
 .stress-picker button.active {
   border-color: var(--accent);
-  background: rgba(124, 158, 255, 0.15);
+  background: rgba(121, 220, 232, 0.15);
   color: var(--accent);
 }
 
@@ -643,7 +595,7 @@ a {
 .checkin-bar.empty { background: transparent; }
 
 .checkin-col.today .checkin-bar-track {
-  outline: 1px solid rgba(124, 158, 255, 0.5);
+  outline: 1px solid rgba(121, 220, 232, 0.5);
   outline-offset: 1px;
 }
 
@@ -686,9 +638,9 @@ a {
 
 .ledger-col {
   padding: 1.5rem;
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .ledger-col h3 {

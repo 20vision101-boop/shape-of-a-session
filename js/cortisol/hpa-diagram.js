@@ -10,8 +10,8 @@ function drawHpaDiagram() {
   const W = 520, H = 420;
   const x = 210;
   const nodes = [
-    { label: "Hypothalamus", sub: "releases CRH", y: 60, color: "#7c9eff" },
-    { label: "Pituitary", sub: "releases ACTH", y: 150, color: "#7c9eff" },
+    { label: "Hypothalamus", sub: "releases CRH", y: 60, color: "#79dce8" },
+    { label: "Pituitary", sub: "releases ACTH", y: 150, color: "#79dce8" },
     { label: "Adrenal cortex", sub: "releases cortisol", y: 240, color: "#ffd27c" },
     { label: "The body", sub: "glucose up, immunity down, alertness up", y: 330, color: "#ff9e7c" },
   ];
@@ -24,7 +24,7 @@ function drawHpaDiagram() {
              stroke="${n.color}" stroke-width="2" opacity="0.6" marker-end="url(#hpa-arrow)" />`
         : "";
       return `
-        <circle cx="${x}" cy="${n.y}" r="8" fill="#0a0a0f" stroke="${n.color}" stroke-width="2" filter="url(#hpa-glow)" />
+        <circle cx="${x}" cy="${n.y}" r="8" fill="#04101f" stroke="${n.color}" stroke-width="2" filter="url(#hpa-glow)" />
         <text x="${x + 22}" y="${n.y - 2}" class="loop-label">${n.label}</text>
         <text x="${x + 22}" y="${n.y + 15}" class="loop-sub">${n.sub}</text>
         ${line}
@@ -35,7 +35,7 @@ function drawHpaDiagram() {
   svg.innerHTML = `
     <defs>
       <marker id="hpa-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c9eff" />
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#79dce8" />
       </marker>
       <marker id="hpa-arrow-back" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 0 L 10 5 L 0 10 z" fill="#7cffb2" />

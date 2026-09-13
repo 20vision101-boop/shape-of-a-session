@@ -5,6 +5,7 @@
 import { initReveal } from "../shared/reveal.js";
 import { initChapterNav } from "../shared/chapter-nav.js";
 import { initHero } from "../shared/hero/index.js";
+import { initEntrance } from "../shared/entrance.js";
 import { initZonesChart } from "./zones-chart.js";
 import { initUptakeDiagram } from "./uptake-diagram.js";
 import { initSchools } from "./schools.js";
@@ -23,3 +24,4 @@ initWeekPlan(refreshSessions);
 
 initChapterNav();
 initHero();
+initEntrance();

@@ -15,7 +15,7 @@ function box(x, y, title, sub, color, w = BOX_W) {
   `;
 }
 
-function arrow(x1, y1, x2, y2, color = "#7c9eff") {
+function arrow(x1, y1, x2, y2, color = "#79dce8") {
   /* Nudge perfectly vertical arrows off-axis by a hair: a zero-width
      bounding box makes some renderers drop the marker. */
   const dx = x1 === x2 ? 0.01 : 0;
@@ -34,17 +34,17 @@ function drawWorkupDiagram() {
   svg.innerHTML = `
     <defs>
       <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c9eff" />
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#79dce8" />
       </marker>
     </defs>
 
-    ${box(left, 10, "Symptoms that actually matter", "low libido, morning erections gone, fatigue, mood, muscle loss", "#7c9eff")}
+    ${box(left, 10, "Symptoms that actually matter", "low libido, morning erections gone, fatigue, mood, muscle loss", "#79dce8")}
     ${arrow(cx, 62, cx, 86)}
 
-    ${box(left, 90, "Total testosterone, before 10am", "fasting, and not during an acute illness", "#7c9eff")}
+    ${box(left, 90, "Total testosterone, before 10am", "fasting, and not during an acute illness", "#79dce8")}
     ${arrow(cx, 142, cx, 166)}
 
-    ${box(left, 170, "Repeat it on a second morning", "single low readings are common and often wrong", "#7c9eff")}
+    ${box(left, 170, "Repeat it on a second morning", "single low readings are common and often wrong", "#79dce8")}
     ${arrow(cx, 222, cx, 250)}
 
     ${box(left, 254, "LH and FSH — where is the fault?", "this is the branch that decides everything after", "#ffd27c")}

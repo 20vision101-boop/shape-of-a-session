@@ -8,7 +8,7 @@ const zones = [
     fuel: "Almost entirely fat", feel: "Easy walking · could do this all day",
   },
   {
-    n: 2, name: "Aerobic base", range: [60, 70], color: "#7c9eff",
+    n: 2, name: "Aerobic base", range: [60, 70], color: "#79dce8",
     fuel: "Mostly fat", feel: "Full sentences, no desire to chat",
   },
   {
@@ -75,7 +75,7 @@ function drawZonesChart() {
 
   svg.innerHTML = `
     <rect x="${xFor(60)}" y="${M.top - 8}" width="${xFor(70) - xFor(60)}" height="${innerH + 8}"
-          fill="rgba(124,158,255,0.06)" />
+          fill="rgba(121,220,232,0.07)" />
     ${grid}
     <text x="${M.left}" y="${M.top - 18}" class="axis-label">% of estimated max heart rate</text>
     ${rows}

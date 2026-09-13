@@ -11,13 +11,25 @@
   <meta property="og:description" content="Intensity zones, four schools of training, 32 movements with step-by-step instructions, and four weekly templates." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script>
+    /* Blocking on purpose: the first frame must be composed, not a flash of
+       the finished hero. Runs before the stylesheet. */
+    (function(){try{
+      if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('anim');
+      }
+    }catch(e){}})();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="components.css" />
 </head>
-<body>
+<body data-essay="training">
 
   <nav class="site-nav" aria-label="Essays">
-    <a class="site-nav-brand" href="index.html">Four Curves</a>
+    <a class="site-nav-brand" href="index.html">four<i>curves</i></a>
     <div class="site-nav-links">
       <a href="glucose.html">Glucose</a>
       <a href="training.html" aria-current="page">Training</a>
@@ -29,9 +41,20 @@
   <!-- HERO -->
   <section class="hero">
     <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-    <h1>The Shape of a Session</h1>
-    <p class="subtitle">Every set is an instruction to the body. This page is what each one says — and exactly how to perform it.</p>
-    <div class="scroll-cue">scroll ↓</div>
+    <div class="hero-copy">
+      <p class="h-eyebrow"><span class="ent-mask"><span class="ent-line">CURVE 02</span></span></p>
+      <h1 class="h-title"><span class="ent-mask"><span class="ent-line">The Shape of a Session</span></span></h1>
+      <div class="h-rule"><span></span></div>
+      <p class="h-lede">Every set is an instruction to the body. This page is what each one says &mdash; and exactly how to perform it.</p>
+      <div class="h-cta">
+        <a class="orb orb-l" style="--orb: #79dce8" href="glucose.html" aria-label="Read Glucose"></a>
+        <a class="pill" href="#part-1">START READING</a>
+        <a class="orb orb-r" style="--orb: #ffd27c" href="cortisol.html" aria-label="Read Cortisol"></a>
+        <span class="orb-label label-l">GLUCOSE</span>
+        <span class="orb-label label-r">CORTISOL</span>
+      </div>
+    </div>
+    <div class="scroll-cue">scroll</div>
   </section>
 
   <!-- SECTION 1: intro text -->

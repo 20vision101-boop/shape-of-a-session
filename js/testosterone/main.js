@@ -2,6 +2,7 @@
 import { initReveal } from "../shared/reveal.js";
 import { initChapterNav } from "../shared/chapter-nav.js";
 import { initHero } from "../shared/hero/index.js";
+import { initEntrance } from "../shared/entrance.js";
 import { initPanelChart } from "./panel-chart.js";
 import { initHpgDiagram } from "./hpg-diagram.js";
 import { initLeverLibrary } from "./library.js";
@@ -16,3 +17,4 @@ initWorkupDiagram();
 initPanelLog();
 initChapterNav();
 initHero();
+initEntrance();

@@ -9,8 +9,8 @@ function drawHpgDiagram() {
   const W = 520, H = 420;
   const x = 200;
   const nodes = [
-    { label: "Hypothalamus", sub: "pulses GnRH", y: 60, color: "#7c9eff" },
-    { label: "Pituitary", sub: "releases LH and FSH", y: 150, color: "#7c9eff" },
+    { label: "Hypothalamus", sub: "pulses GnRH", y: 60, color: "#79dce8" },
+    { label: "Pituitary", sub: "releases LH and FSH", y: 150, color: "#79dce8" },
     { label: "Testes", sub: "LH → testosterone · FSH → sperm", y: 240, color: "#ffd27c" },
     { label: "Blood", sub: "98% bound to SHBG and albumin", y: 330, color: "#ff9e7c" },
   ];
@@ -23,7 +23,7 @@ function drawHpgDiagram() {
              stroke="${n.color}" stroke-width="2" opacity="0.6" marker-end="url(#hpg-arrow)" />`
         : "";
       return `
-        <circle cx="${x}" cy="${n.y}" r="8" fill="#0a0a0f" stroke="${n.color}" stroke-width="2" filter="url(#hpg-glow)" />
+        <circle cx="${x}" cy="${n.y}" r="8" fill="#04101f" stroke="${n.color}" stroke-width="2" filter="url(#hpg-glow)" />
         <text x="${x + 22}" y="${n.y - 2}" class="loop-label">${n.label}</text>
         <text x="${x + 22}" y="${n.y + 15}" class="loop-sub">${n.sub}</text>
         ${line}
@@ -34,7 +34,7 @@ function drawHpgDiagram() {
   svg.innerHTML = `
     <defs>
       <marker id="hpg-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c9eff" />
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#79dce8" />
       </marker>
       <marker id="hpg-arrow-back" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 0 L 10 5 L 0 10 z" fill="#7cffb2" />

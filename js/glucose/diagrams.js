@@ -33,7 +33,7 @@ function drawLoopDiagram() {
   const nodeEls = pts
     .map(
       (p) => `
-      <circle cx="${p.x}" cy="${p.y}" r="8" fill="#0a0a0f" stroke="#7c9eff" stroke-width="2" filter="url(#loop-glow)" />
+      <circle cx="${p.x}" cy="${p.y}" r="8" fill="#04101f" stroke="#79dce8" stroke-width="2" filter="url(#loop-glow)" />
       <text x="${p.x}" y="${p.y - 20}" text-anchor="middle" class="loop-label">${p.label}</text>
       <text x="${p.x}" y="${p.y + 26}" text-anchor="middle" class="loop-sub">${p.sub}</text>
     `
@@ -43,7 +43,7 @@ function drawLoopDiagram() {
   svg.innerHTML = `
     <defs>
       <linearGradient id="loop-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#7c9eff" />
+        <stop offset="0%" stop-color="#79dce8" />
         <stop offset="100%" stop-color="#ff9e7c" />
       </linearGradient>
       <filter id="loop-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -66,7 +66,7 @@ function drawConvergeDiagram() {
   const R = 150;
 
   const nodes = [
-    { label: "Bloodwork", sub: "A1c · insulin · HOMA-IR", angle: -90, color: "#7c9eff" },
+    { label: "Bloodwork", sub: "A1c · insulin · HOMA-IR", angle: -90, color: "#79dce8" },
     { label: "Body composition", sub: "visceral fat · lean mass", angle: 30, color: "#ff9e7c" },
     { label: "Tracking", sub: "food · supplements · CGM", angle: 150, color: "#7cffb2" },
   ];
@@ -88,7 +88,7 @@ function drawConvergeDiagram() {
   const nodeEls = pts
     .map(
       (p) => `
-      <circle cx="${p.x}" cy="${p.y}" r="10" fill="#0a0a0f" stroke="${p.color}" stroke-width="2.5" filter="url(#converge-glow)" />
+      <circle cx="${p.x}" cy="${p.y}" r="10" fill="#04101f" stroke="${p.color}" stroke-width="2.5" filter="url(#converge-glow)" />
       <text x="${p.x}" y="${p.y - 22}" text-anchor="middle" class="loop-label">${p.label}</text>
       <text x="${p.x}" y="${p.y + 28}" text-anchor="middle" class="loop-sub">${p.sub}</text>
     `
@@ -103,7 +103,7 @@ function drawConvergeDiagram() {
       </filter>
     </defs>
     ${lines}
-    <circle cx="${cx}" cy="${cy}" r="26" fill="rgba(124,158,255,0.12)" stroke="#7c9eff" stroke-width="2" filter="url(#converge-glow)" />
+    <circle cx="${cx}" cy="${cy}" r="26" fill="rgba(121,220,232,0.14)" stroke="#79dce8" stroke-width="2" filter="url(#converge-glow)" />
     <text x="${cx}" y="${cy - 4}" text-anchor="middle" class="converge-center">YOUR</text>
     <text x="${cx}" y="${cy + 14}" text-anchor="middle" class="converge-center">PLAN</text>
     ${nodeEls}

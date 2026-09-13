@@ -17,7 +17,7 @@ export const CATEGORIES = [
    and the "when" filter in Part Four. */
 export const WINDOWS = [
   { slug: "morning", name: "Morning", color: "#ffd27c" },
-  { slug: "midday", name: "Midday", color: "#7c9eff" },
+  { slug: "midday", name: "Midday", color: "#79dce8" },
   { slug: "evening", name: "Evening", color: "#ff9e7c" },
   { slug: "anytime", name: "Any time", color: "#7cffb2" },
 ];
