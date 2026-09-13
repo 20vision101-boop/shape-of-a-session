@@ -18,7 +18,9 @@
     document.querySelector('.fc-bottom'),
     document.querySelector('main'),
     document.querySelector('footer'),
-    document.querySelector('.fc-brand')
+    document.querySelector('.fc-brand'),
+    document.querySelector('.chapter-nav'),
+    document.querySelector('.fc-essay-pagination')
   ].filter(Boolean);
   const savedInert = new Map();
 
