@@ -10,52 +10,116 @@
   <meta property="og:title" content="Four Curves" />
   <meta property="og:description" content="Four scroll-driven essays on things you can actually measure and change: glucose, training, cortisol, and testosterone." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="theme-color" content="#080A19" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <script>
-    /* Blocking on purpose: the first frame must be composed, not a flash of
-       the finished hero. Runs before the stylesheet. */
-    (function(){try{
-      if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){
-        document.documentElement.classList.add('anim');
-      }
-    }catch(e){}})();
-  </script>
   <link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="components.css" />
+  <link href="https://db.onlinewebfonts.com/c/13ab13418f633c1b0516fed6e30bedbc?family=Suisse+Int%27l" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css" />
 </head>
-<body>
+<body class="fc-home">
 
-  <nav class="site-nav" aria-label="Essays">
-    <a class="site-nav-brand" href="index.html" aria-current="page">four<i>curves</i></a>
-    <div class="site-nav-links">
-      <a href="glucose.html">Glucose</a>
-      <a href="training.html">Training</a>
-      <a href="cortisol.html">Cortisol</a>
-      <a href="testosterone.html">Testosterone</a>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-copy">
-      <p class="h-eyebrow"><span class="ent-mask"><span class="ent-line">FOUR SYSTEMS</span></span></p>
-      <h1 class="h-title"><span class="ent-mask"><span class="ent-line">Four Curves</span></span></h1>
-      <div class="h-rule"><span></span></div>
-      <p class="h-lede">Averages hide the thing worth changing. Four essays about the shapes underneath them &mdash; and what actually moves each one.</p>
-      <div class="h-cta">
-        <a class="orb orb-l" style="--orb: #7cffb2" href="testosterone.html" aria-label="Read Testosterone"></a>
-        <a class="pill" href="glucose.html">READ THE FIRST</a>
-        <a class="orb orb-r" style="--orb: #79dce8" href="glucose.html" aria-label="Read Glucose"></a>
-        <span class="orb-label label-l">TESTOSTERONE</span>
-        <span class="orb-label label-r">GLUCOSE</span>
+  <a class="fc-skip" href="#main-content">Skip to content</a>
+  <header class="fc-hero">
+    <video class="fc-video" autoplay loop muted playsinline aria-hidden="true" tabindex="-1"
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260813_092641_de52eb87-daf2-41db-92cb-7a56eae012a5.mp4"></video>
+    <div class="fc-layer">
+      <nav class="fc-nav fc-container" aria-label="Main navigation">
+        <a class="fc-brand fc-enter fc-down" href="index.html" aria-current="page" aria-label="Four Curves home">
+          <svg width="32" height="32" viewBox="0 0 256 256" fill="none" aria-hidden="true"><path fill="currentColor" d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"/></svg>
+          <span>Four Curves</span>
+        </a>
+        <div class="fc-nav-links fc-enter fc-down" style="--delay:100ms">
+          <a href="glucose.html">Glucose</a><a href="training.html">Training</a><a href="cortisol.html">Cortisol</a><a href="testosterone.html">Testosterone</a>
+        </div>
+        <div class="fc-nav-action fc-enter fc-down" style="--delay:200ms">
+          <a class="fc-nav-cta" href="glucose.html">Start reading</a>
+        </div>
+        <button class="fc-toggle fc-enter fc-down" style="--delay:100ms" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="fc-menu" hidden>
+          <svg class="fc-menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="fc-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </nav>
+      <div class="fc-content">
+        <div class="fc-container fc-row">
+          <div class="fc-copy">
+            <h1 class="fc-enter fc-up" style="--delay:300ms" id="main-content" tabindex="-1">See the shape behind the numbers</h1>
+            <p class="fc-subhead fc-enter fc-up" style="--delay:500ms">Four visual essays exploring glucose, training, cortisol, and testosterone.</p>
+            <div class="fc-ctas fc-enter fc-up" style="--delay:700ms">
+              <a class="fc-button fc-primary" href="glucose.html">Start with the spike</a>
+              <a class="fc-button fc-secondary" href="#part-1">Explore all four</a>
+            </div>
+          </div>
+          <a class="fc-card fc-enter fc-scale" style="--delay:900ms" href="glucose.html" aria-label="Read The Shape of a Spike, the glucose essay">
+            <p class="fc-card-label">Featured essay</p>
+            <p class="fc-card-title">The Shape<br><span>of a Spike</span></p>
+            <div class="fc-card-meta"><span class="fc-badge">01 / 04</span><span>Glucose · a visual essay</span></div>
+            <div class="fc-chart" aria-hidden="true">
+              <div class="fc-bars">
+                <span style="--height:6.315789473684211%;--delay:1100ms"></span>
+                <span style="--height:7.368421052631578%;--delay:1130ms"></span>
+                <span style="--height:8.421052631578947%;--delay:1160ms"></span>
+                <span style="--height:9.473684210526317%;--delay:1190ms"></span>
+                <span style="--height:11.578947368421053%;--delay:1220ms"></span>
+                <span style="--height:14.736842105263156%;--delay:1250ms"></span>
+                <span style="--height:20%;--delay:1280ms"></span>
+                <span style="--height:28.421052631578945%;--delay:1310ms"></span>
+                <span style="--height:40%;--delay:1340ms"></span>
+                <span style="--height:54.736842105263165%;--delay:1370ms"></span>
+                <span style="--height:70.52631578947368%;--delay:1400ms"></span>
+                <span style="--height:85.26315789473684%;--delay:1430ms"></span>
+                <span style="--height:95.78947368421052%;--delay:1460ms"></span>
+                <span style="--height:100%;--delay:1490ms"></span>
+                <span style="--height:96.84210526315789%;--delay:1520ms"></span>
+                <span style="--height:89.47368421052632%;--delay:1550ms"></span>
+                <span style="--height:80%;--delay:1580ms"></span>
+                <span style="--height:69.47368421052632%;--delay:1610ms"></span>
+                <span style="--height:57.89473684210527%;--delay:1640ms"></span>
+                <span style="--height:47.368421052631575%;--delay:1670ms"></span>
+                <span style="--height:37.89473684210527%;--delay:1700ms"></span>
+                <span style="--height:29.47368421052631%;--delay:1730ms"></span>
+                <span style="--height:23.157894736842106%;--delay:1760ms"></span>
+                <span style="--height:17.894736842105264%;--delay:1790ms"></span>
+                <span style="--height:13.684210526315791%;--delay:1820ms"></span>
+                <span style="--height:10.526315789473683%;--delay:1850ms"></span>
+                <span style="--height:8.421052631578947%;--delay:1880ms"></span>
+                <span style="--height:7.368421052631578%;--delay:1910ms"></span>
+                <span style="--height:6.315789473684211%;--delay:1940ms;--bar:rgba(255,255,255,0.1)"></span>
+                <span style="--height:6.315789473684211%;--delay:1970ms;--bar:rgba(255,255,255,0.1)"></span>
+                <span style="--height:6.315789473684211%;--delay:2000ms;--bar:rgba(255,255,255,0.1)"></span>
+                <span style="--height:6.315789473684211%;--delay:2030ms;--bar:rgba(255,255,255,0.1)"></span>
+              </div>
+              <div class="fc-gridlines"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="fc-axis" aria-hidden="true"><span>Rise</span><span>Peak</span><span>Return</span></div>
+            <p class="fc-chart-note">Illustrative shape · not a clinical reading</p>
+          </a>
+        </div>
+      </div>
+      <div class="fc-bottom fc-container">
+        <a href="#part-1">Explore the essays <span aria-hidden="true">↓</span></a>
+        <button class="fc-motion" type="button" hidden>Pause background</button>
       </div>
     </div>
-    <div class="scroll-cue">scroll</div>
-  </section>
+    <div class="fc-overlay" id="fc-menu" aria-hidden="true" inert>
+      <div class="fc-backdrop"></div>
+      <nav class="fc-panel" aria-label="Mobile navigation">
+        <div class="fc-panel-links">
+          <a href="glucose.html" style="--link-delay:100ms">Glucose</a>
+          <a href="training.html" style="--link-delay:150ms">Training</a>
+          <a href="cortisol.html" style="--link-delay:200ms">Cortisol</a>
+          <a href="testosterone.html" style="--link-delay:250ms">Testosterone</a>
+        </div>
+        <div class="fc-divider"></div>
+        <a class="fc-button fc-primary" href="glucose.html">Start with the spike</a>
+        <a class="fc-button fc-secondary" href="#part-1">Explore all four</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
   <section class="reveal" id="part-1">
     <div class="section-inner">
       <p class="eyebrow">THE IDEA</p>
@@ -141,6 +205,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer>
     <p>Built with plain HTML/CSS/JS · deployed on Vercel</p>
     <p class="disclaimer">
@@ -150,14 +216,6 @@
     </p>
   </footer>
 
-  <script type="module" src="js/shared/hero/index.js"></script>
-  <script type="module">
-    import { initReveal } from "./js/shared/reveal.js";
-    import { initHero } from "./js/shared/hero/index.js";
-    import { initEntrance } from "./js/shared/entrance.js";
-    initReveal();
-    initHero();
-    initEntrance();
-  </script>
+  <script src="js/landing.js" defer></script>
 </body>
 </html>
